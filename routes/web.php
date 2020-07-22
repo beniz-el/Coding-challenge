@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/', [
+'uses' => 'productController@select',
+'as' => '']);
 
 Route::put('/addproduct', [
 'uses' => 'productController@store',
@@ -26,3 +28,15 @@ Route::get('/search', 'productController@search');
 Route::get('supprimer/{id}',[
 	'uses' => 'productController@supprimer',
 'as' => 'supprimer']);
+
+
+
+Route::put('/addcategory', [
+'uses' => 'categoryController@store',
+'as' => 'addcategory']);
+
+Route::get('supprimer/{id}',[
+	'uses' => 'categoryController@supprimer',
+'as' => 'supprimer']);
+
+
