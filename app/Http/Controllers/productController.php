@@ -47,4 +47,9 @@ class productController extends Controller
          $product = DB::table('products')->whereNotNull('name')->orderBy('name','asc')->get();;
         return view('products', ['products'=> $product]); 
     }
+
+    public function select(){
+         $category = DB::table('categories')->whereNotNull('name')->orderBy('name','asc')->get();
+        return view('welcome', ['categories'=> $category]);   
+    }
 }
