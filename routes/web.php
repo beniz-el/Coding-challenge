@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::put('/addproduct', [
+'uses' => 'productController@store',
+'as' => 'addproduct']);
+
+Route::get('/search', 'productController@search');
+
+Route::get('supprimer/{id}',[
+	'uses' => 'productController@supprimer',
+'as' => 'supprimer']);
